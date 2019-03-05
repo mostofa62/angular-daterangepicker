@@ -145,7 +145,30 @@ $scope.dateRangePicker = {
 };
 ```
 
-## Example with minimum current date
+## Events
+
+Optionally, event handlers can be passed in through the `eventHandlers` attribute of `options`.
+
+```
+<input date-range-picker class="form-control date-picker" type="text" ng-model="date"
+options="{eventHandlers: {'show.daterangepicker': function(ev, picker) { ... }}}"/>
+```
+
+All event handlers from the Bootstrap daterangepicker are supported. For reference, the complete list is below:
+
+`show.daterangepicker`: Triggered when the picker is shown
+
+`hide.daterangepicker`: Triggered when the picker is hidden
+
+`showCalendar.daterangepicker`: Triggered when the calendar is shown
+
+`hideCalendar.daterangepicker`: Triggered when the calendar is hidden
+
+`apply.daterangepicker`: Triggered when the apply button is clicked
+
+`cancel.daterangepicker`: Triggered when the cancel button is clicked
+
+## Example with minimum current date and apply event
 ## Example element
 ```
 <input date-range-picker class="form-control date-picker" type="text" 
@@ -174,29 +197,6 @@ $scope.datePicker = {
 };
 
 ```
-
-## Events
-
-Optionally, event handlers can be passed in through the `eventHandlers` attribute of `options`.
-
-```
-<input date-range-picker class="form-control date-picker" type="text" ng-model="date"
-options="{eventHandlers: {'show.daterangepicker': function(ev, picker) { ... }}}"/>
-```
-
-All event handlers from the Bootstrap daterangepicker are supported. For reference, the complete list is below:
-
-`show.daterangepicker`: Triggered when the picker is shown
-
-`hide.daterangepicker`: Triggered when the picker is hidden
-
-`showCalendar.daterangepicker`: Triggered when the calendar is shown
-
-`hideCalendar.daterangepicker`: Triggered when the calendar is hidden
-
-`apply.daterangepicker`: Triggered when the apply button is clicked
-
-`cancel.daterangepicker`: Triggered when the cancel button is clicked
 
 ## Compatibility
 Version > 0.3.0 requires [Bootstrap Datepicker](https://github.com/dangrossman/bootstrap-daterangepicker) 3.0.3 and newer.
