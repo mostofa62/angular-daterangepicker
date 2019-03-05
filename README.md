@@ -136,10 +136,43 @@ $scope.dateRangePicker = {
             'Last 30 Days': [moment().subtract(29, 'days'), moment()]
         },
         eventHandlers: {
-            'apply.daterangepicker': function(event, picker) { console.log('applied'); }
+            'apply.daterangepicker': function(event) { 
+	    	console.log(event.model.startDate.format('YYYY-MM-DD'));
+		console.log(event.model.endDate.format('YYYY-MM-DD'));
+	    }
         }
     }
 };
+```
+
+## Example with minimum current date
+## Example element
+```
+<input date-range-picker class="form-control date-picker" type="text" 
+	ng-model="datePicker.date" 
+	options="datePicker.options"
+	/>
+	
+
+```
+
+```
+
+$scope.datePicker = { 
+	date: { startDate: moment(), endDate: moment() },	
+	options: {
+            minDate: '2019-03-05',
+            eventHandlers: {
+            	'apply.daterangepicker': function(event) { 
+            			console.log(event.model.startDate.format('YYYY-MM-DD')); 
+            			console.log(event.model.endDate.format('YYYY-MM-DD'));
+            		}
+        	}            	
+        }
+				
+
+};
+
 ```
 
 ## Events
