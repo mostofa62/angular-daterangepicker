@@ -184,7 +184,7 @@ All event handlers from the Bootstrap daterangepicker are supported. For referen
 $scope.datePicker = { 
 	date: { startDate: moment(), endDate: moment() },	
 	options: {
-            minDate: '2019-03-05',
+            minDate: moment(),
             eventHandlers: {
             	'apply.daterangepicker': function(event) { 
             			console.log(event.model.startDate.format('YYYY-MM-DD')); 
